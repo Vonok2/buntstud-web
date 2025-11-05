@@ -1,0 +1,7 @@
+/* ===== стили главной страницы (index.html) ===== */
+
+/* Импорты общих CSS-файлов */
+@import url(./common/reset.css);
+@import url(./common/variables.css);
+@import url(./common/header.css);
+@import url(./common/footer.css);

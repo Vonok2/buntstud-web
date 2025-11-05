@@ -1,0 +1,69 @@
+/* ===== Нормализация стилей для проекта ===== */
+
+/* 1. Убираем отступы, поля и включаем удобную модель блоков */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Улучшение рендеринга текста */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* 3. Основные настройки body */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: var(--font-main, sans-serif);
+  background-color: var(--color-light, #ffffff);
+  color: var(--color-dark, #000000);
+}
+
+/* 4. Удаляем стандартные стили ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 5. Убираем маркеры списков */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 6. Изображения ведут себя адекватно */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* 7. Кнопки без странных дефолтных стилей */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* 8. Поля ввода наследуют шрифты */
+input,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+  border: none;
+}
+
+/* 9. Таблицы по умолчанию без пробелов */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
