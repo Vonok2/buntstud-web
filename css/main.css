@@ -2,7 +2,537 @@
 
 /* Импорты общих CSS-файлов */
 @import url(./common/fonts.css);
-@import url(./common/reset.css);
 @import url(./common/variables.css);
+@import url(./common/reset.css);
 @import url(./common/header.css);
 @import url(./common/footer.css);
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Контейнер hero (занимает ширину main) */
+.hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* центрируем svg и кнопку */
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 0;
+  position: relative;
+}
+
+/* Обёртка заголовка и svg */
+.hero-title {
+  width: 100%;
+  position: relative;
+  padding-top: 7.8vw; /* чтобы заголовок не overlap-ил svg */
+}
+
+/* Заголовок — слева и над svg */
+.hero-title--txt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 7.8vw; /* ≈ 150px при 1920px ширине */
+  font-weight: 700;
+  line-height: 1;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* SVG растянут по ширине hero */
+.hero-title--svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Кнопка */
+.section-link {
+  --color: var(--color-primary);
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 48px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color);
+  border: 3px solid var(--color);
+  position: relative;
+  overflow: hidden;
+
+  /* наклонные боковые стороны */
+  transform: skew(-12deg);
+  background-color: transparent;
+  cursor: pointer;
+
+  transition: background-color var(--transition-speed),
+    color var(--transition-speed);
+}
+
+/* текст внутри — возвращаем вертикальный вид */
+.section-link span {
+  transform: skew(12deg);
+  position: relative;
+  z-index: 2;
+}
+
+/* задний фон с прозрачностью */
+.section-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color);
+  opacity: 0.1; /* 10% */
+  z-index: 1;
+}
+
+/* hover — заливка */
+.section-link:hover::before {
+  opacity: 1;
+}
+
+.section-link:hover {
+  color: var(--color-light);
+}
+
+.why-us {
+  position: relative;
+  width: 100vw;
+  height: 140vw;
+  margin: 0 calc(-40px); /* компенсируем padding main */
+  overflow: hidden;
+  padding: 100px 0 150px; /* верхний и нижний отступ для свободного пространства */
+}
+
+/* Фоновая вода */
+.bg-water {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 1;
+  object-fit: cover;
+}
+
+/* Волна */
+.bg-sea-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  z-index: 2;
+}
+
+/* Морское дно */
+.seabed {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 5;
+}
+
+/* Шапка */
+.hat {
+  position: absolute;
+  width: 21.875vw;
+  top: 50px; /* чуть ниже заголовка */
+  right: 0;
+  z-index: 3;
+}
+
+/* Заголовок */
+.why-us--title {
+  position: relative;
+  z-index: 3;
+  color: var(--color-secondary);
+  font-size: calc(185 / 1920 * 100vw);
+  margin: 0;
+  padding-left: 20px; /* немного отступа слева */
+  transform: rotate(-5deg);
+}
+
+/* Параграфы */
+.why-us--text {
+  position: relative;
+  z-index: 3;
+  max-width: 30%; /* не более 30% от main */
+  font-size: 2.08vw; /* адаптивный размер */
+  line-height: 1.6;
+  margin: 60px 0; /* вертикальные отступы */
+}
+
+/* Наклоны и стороны */
+.why-us--text:nth-of-type(1) {
+  float: left;
+  margin-left: 4vw;
+  transform: rotate(3deg);
+  clear: both;
+}
+
+.why-us--text:nth-of-type(2) {
+  float: right;
+  margin-right: 2.08vw;
+  transform: rotate(-3deg);
+  clear: both;
+}
+
+.why-us--text:nth-of-type(3) {
+  float: left;
+  margin-left: 2.08vw;
+  transform: rotate(-3deg);
+  clear: both;
+}
+
+.why-us--text:nth-of-type(4) {
+  float: right;
+  margin-right: 2.08vw;
+  transform: rotate(3deg);
+  clear: both;
+}
+
+/* Рыбки */
+.fish {
+  position: absolute;
+  width: 11.6666;
+  z-index: 4;
+}
+
+/* Рыбки внутри main */
+.fish-1 {
+  top: 26%; /* относительно контейнера main */
+  left: 10%;
+}
+
+.fish-2 {
+  top: 45%;
+  right: 10%;
+}
+
+.fish-3 {
+  top: 70%;
+  left: 10%;
+}
+
+.slider-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* ширина слайдера */
+  margin: 50px auto;
+  display: flex;
+  align-items: center; /* центр по вертикали кнопок */
+  justify-content: space-between; /* кнопки с боков */
+}
+
+.slider-wrapper {
+  flex: 1; /* занимает пространство между кнопками */
+  overflow: hidden;
+  position: relative;
+  margin: 0 20px; /* отступ по 20px с обеих сторон от стрелок */
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* плавность */
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative; /* чтобы текущий слайд занимал место */
+}
+
+/* Кнопки */
+.slider-arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0; /* чтобы кнопки не сжимались */
+}
+
+.slider-arrow img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.slider-arrow:hover img {
+  transform: scale(1.2); /* увеличиваем на 20% */
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+}
+
+/* ========= СЕКЦИЯ ========= */
+.news {
+  margin-top: 200px;
+}
+
+/* Заголовок на всю ширину экрана */
+.news-title {
+  width: 95vw;
+
+  position: relative;
+}
+
+.news-title--svg {
+  width: 100%;
+  display: block;
+}
+
+.news-title--book {
+  position: absolute;
+  right: 5%;
+  top: 80%;
+  transform: translateY(-50%) rotate(-6deg);
+  width: 26.042vw;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ========= КАРТОЧКИ ========= */
+
+.news-cards {
+  margin-top: 0px;
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Контейнер карточки */
+.cards-item {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.35s ease-in-out;
+  --skew-angle: -8deg;
+  --color: var(--color-primary);
+
+  width: 900px;
+  height: 320px;
+
+  border: 5px solid var(--color);
+  transform: skew(var(--skew-angle));
+  overflow: hidden;
+  background: var(--color);
+  position: relative;
+}
+
+/* .cards-item:hover {
+  transform: skew(var(--skew-angle)) scale(1.02);
+} */
+
+/* Контент внутри — выравниваем обратно */
+.cards-inner {
+  height: 100%;
+  display: flex;
+  transform: skew(calc(var(--skew-angle) * -1)); /* обратный наклон */
+}
+
+/* КАРТИНКА слева */
+.card-img-wrapper {
+  margin-left: -22px;
+  width: 65%;
+  height: 100%;
+  overflow: hidden;
+
+  /* скос только справа */
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.cards-item--img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ТЕКСТ справа */
+.cards-item--text--area {
+  width: 35%;
+  height: 100%;
+  background: var(--color);
+  color: var(--color-dark);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 40px;
+
+  transition: width 0.5s ease-in-out, background-color 0.4s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+.cards-item:hover .cards-item--text--area {
+  width: 100%;
+  color: var(--color-light); /* меняем текст на белый */
+}
+
+.cards-item--text {
+  width: 315px;
+  height: 100%;
+}
+
+.card-title {
+  font-size: 1.5625rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.card-description {
+  font-size: 1.5625rem;
+  line-height: 1.3;
+}
+
+.bg-curved-line {
+  max-width: 200vw;
+  width: 200vw;
+}
+
+
+@media screen and (max-width: 1412px) {
+  .why-us {
+    height: 200vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .why-us {
+    height: 200vw;
+  }
+
+  /* Заголовок */
+  .why-us--title {
+    font-size: 10vw; /* адаптивно под маленький экран */
+    transform: rotate(0deg); /* без наклона */
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .why-us--text {
+    font-size: 1rem;
+    float: none; /* убираем плавающие слева/справа */
+    max-width: 90%; /* почти вся ширина экрана */
+    margin: 40px auto; /* вертикальные отступы + центрирование */
+    text-align: center;
+    transform: rotate(0deg); /* убираем наклон или можно маленький */
+  }
+
+  /* Расположение рыбок между абзацами */
+  .fish {
+    position: relative; /* теперь относительно потока */
+    display: block;
+    margin: 0px auto; /* отступ сверху и снизу, центрируем */
+  }
+
+  /* Дополнительно можно уменьшить размер рыбок */
+  .fish img {
+    max-width: 80px; /* пример, подстраивать по дизайну */
+    height: auto;
+  }
+
+  .fish {
+    width: 9vw;
+  }
+
+  .fish-1 {
+    top: 4%;
+    left: 10%;
+  }
+
+  .fish-2 {
+    top: 14%;
+    right: 10%;
+  }
+
+  .fish-3 {
+    top: 17%;
+    left: 10%;
+  }
+
+  /* Секция с слайдером*/
+  .slider-section {
+    padding: 30px 10px;
+  }
+
+  /* Кнопка */
+  .slider-section .section-link {
+    padding: 12px 32px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  /* Слайдер */
+  .slider {
+    flex-direction: column; /* кнопки и слайды сверху вниз */
+    justify-content: center;
+  }
+
+  .slider-wrapper {
+    margin: 0;
+    width: 100%;
+    position: relative;
+  }
+
+  .slide {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Стрелки накладываем поверх слайдов */
+  .slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    padding: 8px;
+    z-index: 10;
+  }
+
+  .slider-arrow-left {
+    left: 10px;
+  }
+
+  .slider-arrow-right {
+    right: 10px;
+  }
+
+  .slider-arrow img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 712px) {
+  .why-us {
+    height: 250vw;
+  }
+}

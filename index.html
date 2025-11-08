@@ -13,8 +13,7 @@
         <!-- ЛЕВАЯ НАВИГАЦИЯ -->
         <ul class="nav__list nav__list--left">
           <li><a href="/" class="current">Главная</a></li>
-          <li><a href="pages/about.html">О колледже</a></li>
-          <li><a href="pages/applicants.html">Поступающим</a></li>
+          <li><a href="./pages/about.html">О колледже</a></li>
         </ul>
 
         <!-- ЛОГОТИП -->
@@ -24,8 +23,8 @@
 
         <!-- ПРАВАЯ НАВИГАЦИЯ -->
         <ul class="nav__list nav__list--right">
-          <li><a href="pages/programs.html">Специальности</a></li>
-          <li><a href="pages/student-life.html">Студенческая жизнь</a></li>
+          <li><a href="./pages/programs.html">Специальности</a></li>
+          <li><a href="./pages/contacts.html">Контакты</a></li>
         </ul>
 
         <!-- БУРГЕР-КНОПКА -->
@@ -38,11 +37,164 @@
 
       <!-- ВЫПАДАЮЩЕЕ МЕНЮ ДЛЯ МОБИЛЬНЫХ -->
       <div class="mobile-menu">
-        <button class="mobile-menu__close" aria-label="Закрыть меню">&times;</button>
+        <button class="mobile-menu__close" aria-label="Закрыть меню">
+          &times;
+        </button>
         <ul class="mobile-menu__list"></ul>
       </div>
     </header>
 
+    <main class="container">
+      <div class="hero">
+        <div class="hero-title">
+          <h1 class="hero-title--txt">НГГПК</h1>
+          <img
+            src="./assets/icons/hero-title.svg"
+            alt=""
+            class="hero-title--svg"
+          />
+        </div>
+        <a href="./pages/about.html" class="section-link">
+          <span>Узнать больше о нас</span>
+        </a>
+      </div>
+
+      <section class="why-us">
+        <img class="bg-sea-wave" src="./assets/icons/bg-sea-wave.svg" alt="" />
+        <h2 class="why-us--title">Почему мы?</h2>
+        <img class="hat" src="./assets/icons/hat.svg" alt="" />
+        <p class="why-us--text">
+          У нас 23 программы обучения, сотни бюджетных мест и тысячи задорных
+          выпускников
+        </p>
+        <img class="fish fish-1" src="./assets/icons/fish-1.svg" alt="" />
+        <p class="why-us--text">
+          современное оборудование, 20 специализированных лабораторий и практика
+          на реальных предприятиях.
+        </p>
+        <img class="fish fish-2" src="./assets/icons/fish-2.svg" alt="" />
+        <p class="why-us--text">
+          кураторы, которые расскажут не душную инфу как скуфы, а как старшие
+          товарищи, и дружелюбный коллектив.
+        </p>
+        <img class="fish fish-3" src="./assets/icons/fish-3.svg" alt="" />
+        <p class="why-us--text">
+          участие в олимпиадах, хакатонах и проектах; мы первые в регионе по
+          количеству направлений подготовки
+        </p>
+        <img class="seabed" src="./assets/icons/seabed.svg" alt="" />
+        <img class="bg-water" src="./assets/icons/water.png" alt="" />
+      </section>
+
+      <section class="slider-section">
+        <!-- Кнопка сверху слайдера -->
+        <a href="./pages/programs.html" class="section-link">
+          <span>Перейти к специальностям</span>
+        </a>
+
+        <!-- Слайдер -->
+        <section class="slider">
+          <button class="slider-arrow slider-arrow-left">
+            <img src="./assets/icons/slider-arrow-left.svg" alt="Previous" />
+          </button>
+
+          <div class="slider-wrapper">
+            <img
+              class="slide active"
+              src="./assets/img/slides/slide-1.png"
+              alt="Slide 1"
+            />
+            <img
+              class="slide"
+              src="./assets/img/slides/slide-2.png"
+              alt="Slide 2"
+            />
+            <img
+              class="slide"
+              src="./assets/img/slides/slide-3.png"
+              alt="Slide 3"
+            />
+          </div>
+
+          <button class="slider-arrow slider-arrow-right">
+            <img src="./assets/icons/slider-arrow-right.svg" alt="Next" />
+          </button>
+        </section>
+      </section>
+
+      <section class="news">
+        <div class="news-title">
+          <img
+            class="news-title--svg"
+            src="./assets/icons/news-title.svg"
+            alt=""
+          />
+          <img class="news-title--book" src="./assets/icons/book.svg" alt="" />
+        </div>
+        <div class="news-cards">
+          <div class="cards-item">
+            <div class="cards-inner">
+              <div class="card-img-wrapper">
+                <img
+                  class="cards-item--img"
+                  src="./assets/img/news/news-img-1.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="cards-item--text--area">
+                <div class="cards-item--text">
+                  <h3 class="card-title">Волонтёрские акции</h3>
+                  <p class="card-description">
+                    #МыВместе – дружные студенты помогают мобилизованным
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cards-item">
+            <div class="cards-inner">
+              <div class="card-img-wrapper">
+                <img
+                  class="cards-item--img"
+                  src="./assets/img/news/news-img-2.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="cards-item--text--area">
+                <div class="cards-item--text">
+                  <h3 class="card-title">Волонтёрские акции</h3>
+                  <p class="card-description">
+                    #МыВместе – дружные студенты помогают мобилизованным
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cards-item">
+            <div class="cards-inner">
+              <div class="card-img-wrapper">
+                <img
+                  class="cards-item--img"
+                  src="./assets/img/news/news-img-3.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="cards-item--text--area">
+                <div class="cards-item--text">
+                  <h3 class="card-title">Волонтёрские акции</h3>
+                  <p class="card-description">
+                    #МыВместе – дружные студенты помогают мобилизованным
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="bg-curved-line" src="./assets/icons/curved-line.svg" alt="" />
+        </div>
+      </section>
+    </main>
+
     <script src="./js/menu.js"></script>
+    <script src="./js/slider.js"></script>
   </body>
 </html>

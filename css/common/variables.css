@@ -3,7 +3,7 @@
 :root {
   /* Тут можно цвета задать */
   --color-primary: #ff5500;
-  --color-secondary: ;
+  --color-secondary: #694AFF;
   --color-accent: #c2e6e1;
   --color-dark: #1a1a1a;
   --color-light: #ffffff;
@@ -12,4 +12,5 @@
   --font-main: "PP Gosha Sans", sans-serif;
 
   /* Ещё что-то... */
+  --transition-speed: 0.2s;
 }
