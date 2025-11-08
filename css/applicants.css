@@ -1,6 +1,7 @@
-/* ===== стили страницы "Контакты" ===== */
+/* ===== стили страницы "Поступающим" ===== */
 
 /* Импорты общих CSS-файлов */
+@import url(./common/fonts.css);
 @import url(./common/reset.css);
 @import url(./common/variables.css);
 @import url(./common/header.css);

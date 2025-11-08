@@ -1,0 +1,17 @@
+/* ====== Локально подключённые шрифты ====== */
+
+@font-face {
+    font-family: 'PP Gosha Sans';
+    src: url('../../assets/fonts/PPGoshaSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Gosha Sans';
+    src: url('../../assets/fonts/PPGoshaSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

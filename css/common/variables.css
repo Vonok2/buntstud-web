@@ -2,14 +2,14 @@
 
 :root {
   /* Тут можно цвета задать */
-  --color-primary: /* Вместо этого вставишь */ ;
-  --color-secondary: /* Вместо этого вставишь */ ;
-  --color-dark: /* Вместо этого вставишь */ ;
-  --color-light: /* Вместо этого вставишь */ ;
+  --color-primary: #ff5500;
+  --color-secondary: ;
+  --color-accent: #c2e6e1;
+  --color-dark: #1a1a1a;
+  --color-light: #ffffff;
 
   /* Тут шрифты */
-  --font-main: /* Вместо этого вставишь */ , sans-serif;
-  --font-accent: /* Вместо этого вставишь */ , sans-serif;
+  --font-main: "PP Gosha Sans", sans-serif;
 
   /* Ещё что-то... */
 }

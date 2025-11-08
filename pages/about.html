@@ -5,8 +5,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Надо придумать название вкладки -->
-    <title>___</title>
-    <link rel="stylesheet" href="../css/about.css" />
+    <title>О колледже НГГПК</title>
+    <link rel="stylesheet" href="../../css/about.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <!-- ЛЕВАЯ НАВИГАЦИЯ -->
+        <ul class="nav__list nav__list--left">
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="./about.html" class="current">О колледже</a></li>
+          <li><a href="./applicants.html">Поступающим</a></li>
+        </ul>
+
+        <!-- ЛОГОТИП -->
+        <a href="../index.html" class="nav__logo">
+          <img src="../assets/icons/logo.svg" alt="Логотип колледжа" />
+        </a>
+
+        <!-- ПРАВАЯ НАВИГАЦИЯ -->
+        <ul class="nav__list nav__list--right">
+          <li><a href="./programs.html">Специальности</a></li>
+          <li><a href="./student-life.html">Студенческая жизнь</a></li>
+        </ul>
+
+        <!-- БУРГЕР-КНОПКА -->
+        <button class="nav__burger" aria-label="Меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+
+      <!-- ВЫПАДАЮЩЕЕ МЕНЮ ДЛЯ МОБИЛЬНЫХ -->
+      <div class="mobile-menu">
+        <button class="mobile-menu__close" aria-label="Закрыть меню">&times;</button>
+        <ul class="mobile-menu__list"></ul>
+      </div>
+    </header>
+
+    <script src="../js/menu.js"></script>
+  </body>
 </html>
