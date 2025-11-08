@@ -31,6 +31,7 @@
 │
 ├─ /css/
 │   ├─ /common/            # общие стили
+│   │    ├─ fonts.css      # сброс стилей
 │   │    ├─ reset.css      # сброс стилей
 │   │    ├─ variables.css  # CSS-переменные (цвета, шрифты, отступы)
 │   │    ├─ header.css     # стили хедера
@@ -39,7 +40,8 @@
 │   ├─ main.css            # стили главной страницы
 │   ├─ about.css           # стили страницы "О колледже / О проекте"
 │   ├─ programs.css        # стили страницы "Специальности"
-│   └─ contacts.css        # стили страницы "Контакты"
+│   ├─ student-life.css    # стили страницы "Студенческая жизнь"
+│   └─ applicants.css      # стили страницы "Студентам"
 │
 ├─ /js/
 │   ├─ slider.js           # слайдер на главной
@@ -49,7 +51,8 @@
 ├─ /pages/
 │   ├─ about.html
 │   ├─ programs.html
-│   └─ contacts.html
+│   ├─ student-life.html
+│   └─ applicants.html
 │
 └─ index.html              # главная страница
 ```
