@@ -40,6 +40,8 @@
 
 .nav__list li {
   list-style: none;
+  display: flex;
+  align-items: center;
 }
 
 .nav__list a {
@@ -49,8 +51,11 @@
   font-weight: 400;
   white-space: nowrap;
   padding: 4px 6px;
-
   transition: 0.25s ease;
+  display: flex;
+  align-items: center;      /* вертикальное центрирование */
+  justify-content: center;  /* горизонтальное центрирование */
+  text-align: center;       /* на случай переноса строки */
 }
 
 /* Активная ссылка (ГЛАВНАЯ) */

@@ -23,7 +23,7 @@ body {
   font-family: var(--font-main, sans-serif);
   background-color: var(--color-light, #ffffff);
   color: var(--color-dark, #000000);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 /* 4. Удаляем стандартные стили ссылок */
