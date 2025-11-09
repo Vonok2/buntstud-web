@@ -14,6 +14,8 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  /* overflow: hidden;
+  height: 100%; */
 }
 
 /* 3. Основные настройки body */
@@ -24,6 +26,8 @@ body {
   background-color: var(--color-light, #ffffff);
   color: var(--color-dark, #000000);
   overflow-x: hidden;
+  /* overflow-y: auto; */
+  /* height: 100%; */
 }
 
 /* 4. Удаляем стандартные стили ссылок */

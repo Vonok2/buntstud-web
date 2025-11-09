@@ -125,6 +125,7 @@
   height: 100%;
   z-index: 1;
   object-fit: cover;
+  pointer-events: none;
 }
 
 /* Волна */
@@ -135,6 +136,7 @@
   width: 100vw;
   height: auto;
   z-index: 2;
+  pointer-events: none;
 }
 
 /* Морское дно */
@@ -144,6 +146,7 @@
   left: 0;
   width: 100vw;
   z-index: 5;
+  pointer-events: none;
 }
 
 /* Шапка */
@@ -153,6 +156,7 @@
   top: 50px; /* чуть ниже заголовка */
   right: 0;
   z-index: 3;
+  pointer-events: none;
 }
 
 /* Заголовок */
@@ -210,6 +214,7 @@
   position: absolute;
   width: 11.6666;
   z-index: 4;
+  pointer-events: none;
 }
 
 /* Рыбки внутри main */
@@ -291,21 +296,21 @@
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
 }
 
-/* ========= СЕКЦИЯ ========= */
+/* ========= СЕКЦИЯ НОВОСТЕЙ ========= */
 .news {
   margin-top: 200px;
+  position: relative;
 }
 
 /* Заголовок на всю ширину экрана */
 .news-title {
-  width: 95vw;
-
   position: relative;
 }
 
 .news-title--svg {
   width: 100%;
   display: block;
+  pointer-events: none;
 }
 
 .news-title--book {
@@ -314,13 +319,15 @@
   top: 80%;
   transform: translateY(-50%) rotate(-6deg);
   width: 26.042vw;
-  pointer-events: none;
   z-index: 10;
+  pointer-events: none;
 }
 
 /* ========= КАРТОЧКИ ========= */
 
 .news-cards {
+  position: relative;
+  z-index: 2;
   margin-top: 0px;
   display: flex;
   gap: 60px;
@@ -345,10 +352,6 @@
   background: var(--color);
   position: relative;
 }
-
-/* .cards-item:hover {
-  transform: skew(var(--skew-angle)) scale(1.02);
-} */
 
 /* Контент внутри — выравниваем обратно */
 .cards-inner {
@@ -412,14 +415,126 @@
 }
 
 .bg-curved-line {
-  max-width: 200vw;
-  width: 200vw;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100vw !important;
+  max-width: none !important;
+  height: auto;
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Контейнер — выравниваем элементы по центру в строку */
+.news-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px; /* расстояние между стрелками и индексом */
+  margin-top: 40px;
+  user-select: none;
+}
+
+/* КНОПКИ — стрелки */
+.news-control--btn {
+  width: 36px;          /* можно изменить по желанию */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.news-control--btn:hover {
+  transform: scale(1.2); /* увеличиваем на 20% */
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+}
+
+/* Блок индекса */
+.news-control--index {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Цифра поверх SVG */
+.news-control--index--num {
+  position: absolute;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  pointer-events: none;
+}
+
+/* SVG маркера */
+.news-control--index--marker {
+  width: 42px; /* подгоняй по ширине маркера */
+  height: auto;
+}
+
+@media (min-width: 1921px) {
+  .why-us {
+    margin-left: calc((100vw - 100%) / -2);
+    margin-right: calc((100vw - 50%) / -2);
+  }
+}
+
+@media (min-width: 1412px) {
+  .bg-curved-line {
+    height: 100%;
+  }
 }
 
 
 @media screen and (max-width: 1412px) {
   .why-us {
     height: 200vw;
+  }
+}
+
+@media screen and (max-width: 1012px){
+
+    /* уменьшаем высоту карточки */
+  .cards-item {
+    width: 90vw;        /* чтобы не выходило за экран */
+    height: 210px;      /* ниже чем 320px */
+  }
+
+  /* картинка немного меньше, текст — немного шире */
+  .card-img-wrapper {
+    width: 55%;
+  }
+
+  .cards-item--text--area {
+    width: 45%;
+    padding: 24px 28px;
+  }
+
+  /* размер текста */
+  .card-title {
+    font-size: 1.125rem;  /* 18px */
+  }
+
+  .card-description {
+    font-size: 1rem;      /* 16px */
+  }
+
+  /* уменьшить максимальную ширину текста */
+  .cards-item--text {
+    width: auto;
+  }
+
+  /* уменьшаем книгу в заголовке */
+  .news-title--book {
+    width: 30vw;
+    top: 70%;
+  }
+
+  /* фон SVG чуть выше, чтобы попадал за карточки */
+  .bg-curved-line {
+    top: 18%;
   }
 }
 
