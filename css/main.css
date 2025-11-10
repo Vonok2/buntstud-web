@@ -119,11 +119,11 @@
 /* Фоновая вода */
 .bg-water {
   position: absolute;
-  top: 0;
+  top: 7%;
   left: 0;
   width: 100vw;
   height: 100%;
-  z-index: 1;
+  z-index: 3;
   object-fit: cover;
   pointer-events: none;
 }
@@ -131,10 +131,10 @@
 /* Волна */
 .bg-sea-wave {
   position: absolute;
-  top: 0;
+  top: 3%;
   left: 0;
   width: 100vw;
-  height: auto;
+  height: ;
   z-index: 2;
   pointer-events: none;
 }
@@ -153,21 +153,21 @@
 .hat {
   position: absolute;
   width: 21.875vw;
-  top: 50px; /* чуть ниже заголовка */
-  right: 0;
+  top: 0%; /* чуть ниже заголовка */
+  right: 0%;
   z-index: 3;
   pointer-events: none;
 }
 
 /* Заголовок */
 .why-us--title {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: -1.5%;
   z-index: 3;
   color: var(--color-secondary);
-  font-size: calc(185 / 1920 * 100vw);
-  margin: 0;
-  padding-left: 20px; /* немного отступа слева */
-  transform: rotate(-5deg);
+  font-size: min(calc(185 / 1440 * 100vw), 246px);
+  transform: rotate(-3.72deg);
 }
 
 /* Параграфы */
@@ -441,7 +441,7 @@
 
 /* КНОПКИ — стрелки */
 .news-control--btn {
-  width: 36px;          /* можно изменить по желанию */
+  width: 36px; /* можно изменить по желанию */
   height: auto;
   cursor: pointer;
   transition: transform 0.2s ease, filter 0.2s ease;
@@ -488,19 +488,17 @@
   }
 }
 
-
 @media screen and (max-width: 1412px) {
   .why-us {
     height: 200vw;
   }
 }
 
-@media screen and (max-width: 1012px){
-
-    /* уменьшаем высоту карточки */
+@media screen and (max-width: 1012px) {
+  /* уменьшаем высоту карточки */
   .cards-item {
-    width: 90vw;        /* чтобы не выходило за экран */
-    height: 210px;      /* ниже чем 320px */
+    width: 90vw; /* чтобы не выходило за экран */
+    height: 210px; /* ниже чем 320px */
   }
 
   /* картинка немного меньше, текст — немного шире */
@@ -515,11 +513,11 @@
 
   /* размер текста */
   .card-title {
-    font-size: 1.125rem;  /* 18px */
+    font-size: 1.125rem; /* 18px */
   }
 
   .card-description {
-    font-size: 1rem;      /* 16px */
+    font-size: 1rem; /* 16px */
   }
 
   /* уменьшить максимальную ширину текста */
