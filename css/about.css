@@ -1,8 +1,236 @@
 /* ===== стили страницы "О колледже" ===== */
 
-/* Импорты общих CSS-файлов */
-@import url(./common/fonts.css);
-@import url(./common/reset.css);
-@import url(./common/variables.css);
-@import url(./common/header.css);
-@import url(./common/footer.css);
+/* Импорт общих CSS-файлов, используемых на всём сайте */
+@import url(./common/fonts.css); /* Подключение шрифтов */
+@import url(./common/reset.css); /* Сброс базовых стилей браузера */
+@import url(./common/variables.css); /* Глобальные CSS-переменные (цвета, размеры и т.д.) */
+@import url(./common/header.css); /* Стили шапки сайта */
+@import url(./common/footer.css); /* Стили подвала сайта */
+
+/* Общие стили для заголовков и текста */
+h1,
+p {
+  white-space: nowrap; /* Запрещает перенос строк — весь текст в одной линии */
+}
+
+/* Контейнер для основной структуры страницы */
+.container {
+  width: 100%; /* Растягивается на всю ширину */
+  height: 274.3055vw; /* Высота в относительных единицах (адаптация под ширину экрана) */
+  max-width: 1920px; /* Максимальная ширина контейнера */
+  margin: 0 auto; /* Центрирование по горизонтали */
+  padding: 0 20px; /* Внутренние отступы слева и справа */
+  display: flex; /* Включаем флекс-контейнер */
+  flex-direction: column; /* Элементы идут вертикально */
+  justify-content: flex-end;
+  gap: 60px; /* Расстояние между блоками */
+}
+
+/* Герой-блок (главный баннер секции) */
+.hero {
+  position: absolute; /* Абсолютное позиционирование относительно родителя */
+  top: 18.8888vw; /* Отступ сверху */
+  left: 50%; /* Центрирование по горизонтали */
+  transform: translateX(
+    -50%
+  ); /* Сдвигаем на половину ширины для точного центрирования */
+  overflow: hidden; /* Скрываем всё, что выходит за границы блока */
+}
+
+/* Контейнер для содержимого героя */
+.hero-content {
+  position: relative; /* Относительное позиционирование для вложенных элементов */
+  width: 100vw; /* Ширина равна ширине окна */
+  height: 180vw; /* Высота в зависимости от ширины экрана */
+}
+
+/* Большой заголовок на фоне */
+.hero-title {
+  position: absolute;
+  top: 10%;
+  left: -1%;
+  font-size: 33.3333vw; /* Очень крупный текст */
+  line-height: 60%; /* Уменьшенная высота строки */
+  color: var(--color-primary); /* Основной цвет текста */
+  transform: rotate(3.12deg); /* Небольшой поворот для динамики */
+}
+
+/* Фоновые элементы — знаки вопроса (?) */
+.hero-bg-question {
+  position: absolute;
+  pointer-events: none; /* Игнорируются клики мыши */
+}
+
+/* Индивидуальное позиционирование и размеры для каждого вопросительного знака */
+.hero-bg-question:nth-child(2) {
+  top: 35%;
+  left: 28%;
+  transform: rotate(-26deg);
+  width: 13.6805vw;
+}
+.hero-bg-question:nth-child(3) {
+  top: 38%;
+  right: 10%;
+  z-index: 2;
+  transform: rotate(27.79deg);
+  width: 15vw;
+}
+.hero-bg-question:nth-child(4) {
+  top: 56%;
+  left: 10%;
+  z-index: 2;
+  transform: rotate(-13.42deg) scaleX(-1); /* Отражение по горизонтали */
+  width: 17vw;
+}
+.hero-bg-question:nth-child(5) {
+  top: 60%;
+  right: 24%;
+  z-index: 2;
+  transform: rotate(-21.21deg);
+  width: 13vw;
+}
+.hero-bg-question:nth-child(6) {
+  top: 76%;
+  left: 32%;
+  z-index: 2;
+  transform: rotate(46.23deg);
+  width: 8vw;
+}
+
+/* Подпись или описание внизу секции героя */
+.hero-description {
+  position: absolute;
+  bottom: 5%;
+  left: 2%;
+  z-index: 2;
+  font-size: 3.125vw;
+}
+
+/* Фоновое изображение героя (например, иллюстрация) */
+.hero-bg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  pointer-events: none; /* Не реагирует на курсор */
+}
+
+/* Секция "О нашем колледже" */
+.our-college-section {
+  position: absolute;
+  top: 210vw; /* Расположение под героем */
+  left: 50%;
+  transform: translateX(-50%); /* Центрирование по горизонтали */
+}
+
+/* Карточка с фоном и контентом описания */
+.our-college-content--card {
+  background: url("../assets/icons/about-description-bg.svg");
+  background-size: cover; /* Масштабируем изображение по размеру блока */
+  background-position: center; /* Центрируем фон */
+  background-repeat: no-repeat; /* Без повторения */
+  width: min(100vw, 1920px); /* Ширина ограничена максимумом */
+  height: min(86.9444vw, 1669px); /* Пропорциональная высота */
+  position: relative; /* Для абсолютных потомков */
+}
+
+/* Заголовок карточки */
+.card-title {
+  position: absolute;
+  top: -6%;
+  left: 13%;
+  font-size: min(10.4166vw, 200px);
+  color: var(--color-light);
+  transform: rotate(-1deg); /* Лёгкий наклон для визуального интереса */
+}
+
+/* Общие стили для текстовых описаний */
+.card-description {
+  position: absolute;
+  font-size: min(2.0833vw, 40px);
+  line-height: 101.1%;
+  color: var(--color-light);
+}
+
+/* Индивидуальные позиции для разных абзацев описания */
+.card-description:nth-child(2) {
+  top: 12%;
+  left: 16%;
+}
+.card-description:nth-child(3) {
+  top: 40%;
+  right: 2%;
+  transform: rotate(-4.15deg);
+}
+.card-description:nth-child(4) {
+  top: 55%;
+  left: 2%;
+  transform: rotate(-3.69deg);
+}
+
+/* Выделение ключевого слова в тексте (цветом и жирностью) */
+.card-description:nth-child(3) span {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.section-link {
+  --color: var(--color-primary);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% / 3);
+  margin: 0 auto;
+  padding: 16px 48px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: var(--color);
+  border: 3px solid var(--color);
+  transform: skew(-12deg);
+  background-color: transparent;
+  cursor: pointer;
+  transition: color var(--transition-speed);
+}
+
+/* текст внутри */
+.section-link span {
+  transform: skew(12deg);
+  position: relative;
+  z-index: 2;
+}
+
+/* создаем заливку */
+.section-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0; /* начинаем справа */
+  width: 0; /* начальная ширина */
+  height: 100%;
+  background-color: var(--color);
+  z-index: 1;
+  transition: width 0.5s ease; /* плавное заполнение */
+}
+
+/* при наведении — заполняем всю кнопку */
+.section-link:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+/* цвет текста при hover */
+.section-link:hover {
+  color: var(--color-light);
+}
+
+
+@media screen and (max-width: 774px) {
+  .section-link {
+    width: 50%;
+  }
+}

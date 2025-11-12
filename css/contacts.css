@@ -1,36 +1,40 @@
 /* ===== стили страницы "Поступающим" ===== */
 
-/* Импорты общих CSS-файлов */
-@import url(./common/fonts.css);
-@import url(./common/reset.css);
-@import url(./common/variables.css);
-@import url(./common/header.css);
-@import url(./common/footer.css);
+/* Импорт общих CSS-файлов, которые используются на всём сайте */
+@import url(./common/fonts.css); /* Подключение шрифтов */
+@import url(./common/reset.css); /* Сброс стандартных браузерных стилей */
+@import url(./common/variables.css); /* Глобальные CSS-переменные (цвета, шрифты и т.д.) */
+@import url(./common/header.css); /* Стили шапки сайта */
+@import url(./common/footer.css); /* Стили подвала сайта */
 
+/* Общий контейнер страницы */
 .container {
-  width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+  width: 100%; /* Растягивается на всю ширину экрана */
+  max-width: 1920px; /* Ограничение максимальной ширины */
+  margin: 0 auto; /* Центрирование по горизонтали */
+  padding: 0 20px; /* Внутренние отступы по бокам */
+  display: flex; /* Включаем flex-контейнер */
+  flex-direction: column; /* Элементы располагаются вертикально */
+  gap: 60px; /* Расстояние между секциями */
 }
 
+/* SVG-заголовок (например, надпись "Поступающим") */
 .hero-title--svg {
   width: 100vw;
   height: 70vw;
-  overflow: hidden;
+  overflow: hidden; /* Скрытие лишнего содержимого */
   display: block;
-  object-fit: cover;
-  object-position: top;
+  object-fit: cover; /* Изображение масштабируется, сохраняя пропорции */
+  object-position: top; /* Центрируем по верхнему краю */
   margin: 0 auto;
 }
 
+/* Секция с контактами */
 .contacts-section {
-  position: relative;
+  position: relative; /* Для позиционирования вложенных элементов */
 }
 
+/* Иллюстрация контактной зоны (фон или SVG-декор) */
 .contact-booth--svg {
   max-width: 1920px;
   max-height: 2304px;
@@ -38,52 +42,59 @@
   height: 120vw;
   overflow: hidden;
   display: block;
-  object-fit: cover;
-  object-position: bottom;
+  object-fit: cover; /* Растягивается с сохранением пропорций */
+  object-position: bottom; /* Центрируется по нижней части */
   margin: 0 auto;
-  pointer-events: none;
-  user-select: none;
+  pointer-events: none; /* Не реагирует на клики */
+  user-select: none; /* Нельзя выделить мышкой */
 }
 
+/* Контейнер для соцсетей (иконки, ссылки и т.д.) */
 .contact-social-links {
   position: absolute;
   bottom: 25%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* Центрирование по горизонтали */
   display: flex;
-  column-gap: 10.4166vw;
+  column-gap: 10.4166vw; /* Расстояние между элементами */
 }
 
+/* Оформление отдельной ссылки (иконка + текст) */
 .contact-link {
   display: flex;
   align-items: center;
-  column-gap: 2.7777vw;
+  column-gap: 2.7777vw; /* Расстояние между иконкой и текстом */
   font-size: 3.125vw;
   color: var(--color-light);
 }
 
+/* Эффект при наведении на ссылку */
 .contact-link:hover {
-  /* color: var(--color-secondary); */
-  transform: translateX(0.5vw);
+  /* color: var(--color-secondary); */ /* Можно включить изменение цвета */
+  transform: translateX(0.5vw); /* Лёгкое смещение вправо при ховере */
 }
 
+/* Иконка внутри ссылки */
 .contact-link img {
   max-width: 100px;
   width: 6.9444vw;
 }
 
+/* Секция с информацией о поступлении */
 .admission-section {
-  margin-top: -100px;
+  margin-top: -100px; /* Смещение секции вверх */
 }
 
+/* Главный заголовок блока "Поступление" */
 .admission-title-primary {
   font-size: min(13.8888vw, 266px);
   color: var(--color-primary);
-  white-space: nowrap;
-  padding-bottom: -40px;
+  white-space: nowrap; /* Без переноса строк */
+  padding-bottom: -40px; /* (Вероятно, не имеет эффекта, т.к. отрицательные отступы для padding не применяются) */
   position: relative;
 }
 
+/* Акцентный элемент в заголовке (например, слово выделено другим цветом) */
 .admission-title-primary span {
   font-family: var(--font-accent);
   color: var(--color-accent);
@@ -93,14 +104,16 @@
   left: 1.5%;
 }
 
+/* Контейнер карточек шагов поступления */
 .admission-cards {
   display: flex;
   flex-direction: column;
-  row-gap: 5.9027vw;
+  row-gap: 5.9027vw; /* Расстояние между карточками */
   margin-top: 14.2361vw;
   position: relative;
 }
 
+/* Базовая карточка */
 .card {
   width: min(85.4166vw, 1640px);
   height: min(43.0555vw, 826px);
@@ -113,6 +126,7 @@
   color: var(--color-light);
 }
 
+/* Карточка с кнопкой (например, финальный шаг) */
 .card-with-btn {
   width: min(83.6111vw, 1605px);
   height: min(46.1111vw, 885px);
@@ -124,10 +138,11 @@
   position: relative;
   color: var(--color-light);
   display: flex;
-  justify-content: end;
-  align-items: end;
+  justify-content: end; /* Контент прижат к правому краю */
+  align-items: end; /* Контент прижат к нижнему краю */
 }
 
+/* Заголовок карточки — Шаг 1 */
 .card-title-step1 {
   position: absolute;
   top: 0;
@@ -136,6 +151,7 @@
   white-space: nowrap;
 }
 
+/* Заголовок карточки — Шаг 2 */
 .card-title-step2 {
   position: absolute;
   top: 4.5%;
@@ -144,15 +160,17 @@
   white-space: nowrap;
 }
 
+/* Заголовок карточки — Шаг 3 */
 .card-title-step3 {
   position: absolute;
   top: 4%;
   left: 8%;
   font-size: min(10.4166vw, 200px);
   white-space: nowrap;
-  transform: rotate(-1.35deg);
+  transform: rotate(-1.35deg); /* Лёгкий наклон текста */
 }
 
+/* Общий стиль текста внутри карточек */
 .card-text {
   position: absolute;
   line-height: 101.1%;
@@ -160,6 +178,7 @@
   white-space: nowrap;
 }
 
+/* Текст внутри карточки с кнопкой */
 .card-with-btn-text {
   position: absolute;
   top: 40%;
@@ -169,6 +188,7 @@
   white-space: nowrap;
 }
 
+/* Расположение отдельных текстовых элементов */
 .card-text:nth-child(3) {
   top: 40%;
   left: 8%;
@@ -179,18 +199,20 @@
   right: 12%;
 }
 
+/* Кнопка на карточке */
 .card-btn {
   display: inline-block;
   position: relative;
   background-color: var(--color-secondary);
   width: min(51.9444vw, 998px);
   height: min(20.6944vw, 397px);
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%); /* Скошенная форма кнопки */
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease; /* Плавная анимация при наведении */
 }
 
+/* Эффект “блеска” при наведении (псевдоэлемент) */
 .card-btn::before {
   content: "";
   position: absolute;
@@ -201,18 +223,23 @@
     rgba(255, 255, 255, 0.4) 50%,
     transparent 70%
   );
-  transform: translateX(-100%);
+  transform: translateX(
+    -100%
+  ); /* Начальное положение градиента за пределами кнопки */
   transition: transform 0.6s ease;
 }
 
+/* Анимация кнопки при наведении */
 .card-btn:hover {
-  transform: translateY(-2%) scale(1.02);
+  transform: translateY(-2%) scale(1.02); /* Лёгкое поднятие и увеличение */
 }
 
+/* Перемещение “блеска” через кнопку */
 .card-btn:hover::before {
   transform: translateX(100%);
 }
 
+/* Текст на кнопке */
 .card-btn span {
   position: absolute;
   top: 40%;
@@ -225,12 +252,10 @@
   text-align: right;
 }
 
+/* Кривая линия-декор между секциями */
 .curved-contact-line {
   width: 100vw;
   position: absolute;
   top: -30%;
-  z-index: -1;
-}
-
-@media screen and (min-width: 1920px) {
+  z-index: -1; /* Отправляем за другие элементы */
 }

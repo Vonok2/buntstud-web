@@ -1,34 +1,41 @@
 <!-- ===== Страница "О нас" ===== -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <!-- Адаптивная верстка для мобильных устройств -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Надо придумать название вкладки -->
+    <!-- Заголовок страницы во вкладке браузера -->
     <title>О колледже НГГПК</title>
+    <!-- Подключение CSS-файла с уникальными стилями для страницы -->
     <link rel="stylesheet" href="../css/about.css" />
   </head>
+
   <body>
+    <!-- ===== ШАПКА САЙТА (HEADER) ===== -->
     <header class="header">
       <nav class="nav">
-        <!-- ЛЕВАЯ НАВИГАЦИЯ -->
+        <!-- ЛЕВАЯ ЧАСТЬ НАВИГАЦИИ -->
         <ul class="nav__list nav__list--left">
           <li><a href="../index.html">Главная</a></li>
+          <!-- Ссылка на текущую страницу выделена классом "current" -->
           <li><a href="./about.html" class="current">О колледже</a></li>
         </ul>
 
-        <!-- ЛОГОТИП -->
+        <!-- ЦЕНТРАЛЬНЫЙ ЛОГОТИП -->
         <a href="../index.html" class="nav__logo">
           <img src="../assets/icons/logo.svg" alt="Логотип колледжа" />
         </a>
 
-        <!-- ПРАВАЯ НАВИГАЦИЯ -->
+        <!-- ПРАВАЯ ЧАСТЬ НАВИГАЦИИ -->
         <ul class="nav__list nav__list--right">
           <li><a href="./programs.html">Специальности</a></li>
-          <li><a href="./contacts.html">Контакты и<br>поступающим</a></li>
+          <li>
+            <a href="./contacts.html">Контакты и<br />поступающим</a>
+          </li>
         </ul>
 
-        <!-- БУРГЕР-КНОПКА -->
+        <!-- КНОПКА-БУРГЕР для мобильного меню -->
         <button class="nav__burger" aria-label="Меню">
           <span></span>
           <span></span>
@@ -36,22 +43,121 @@
         </button>
       </nav>
 
-      <!-- ВЫПАДАЮЩЕЕ МЕНЮ ДЛЯ МОБИЛЬНЫХ -->
+      <!-- ВЫПАДАЮЩЕЕ МОБИЛЬНОЕ МЕНЮ -->
       <div class="mobile-menu">
-        <button class="mobile-menu__close" aria-label="Закрыть меню">&times;</button>
+        <!-- Кнопка закрытия мобильного меню -->
+        <button class="mobile-menu__close" aria-label="Закрыть меню">
+          &times;
+        </button>
+        <!-- Список ссылок мобильного меню (динамически наполняется JS) -->
         <ul class="mobile-menu__list"></ul>
       </div>
     </header>
 
+    <!-- ===== ОСНОВНОЙ КОНТЕНТ СТРАНИЦЫ ===== -->
+    <main class="container">
+      <!-- === Герой-секция (вступительный блок с крупным заголовком) === -->
+      <section class="hero">
+        <div class="hero-content">
+          <!-- Крупный заголовок -->
+          <h1 class="hero-title">
+            Кто<br />
+            мы???
+          </h1>
 
+          <!-- Декоративные фоны с вопросительными знаками -->
+          <img
+            src="../assets/icons/hero-bg-question.svg"
+            alt=""
+            class="hero-bg-question"
+          />
+          <img
+            src="../assets/icons/hero-bg-question.svg"
+            alt=""
+            class="hero-bg-question"
+          />
+          <img
+            src="../assets/icons/hero-bg-question.svg"
+            alt=""
+            class="hero-bg-question"
+          />
+          <img
+            src="../assets/icons/hero-bg-question.svg"
+            alt=""
+            class="hero-bg-question"
+          />
+          <img
+            src="../assets/icons/hero-bg-question.svg"
+            alt=""
+            class="hero-bg-question"
+          />
 
+          <!-- Описание колледжа -->
+          <p class="hero-description">
+            НГГПК –<br />многопрофильный<br />колледж в самом<br />сердце
+            Находки (ул.<br />
+            Дзержинского, д. 9а<br />). Мы гордимся<br />историей: в 2025
+            году<br />отмечаем 85-летие<br />системы СПО , и наши<br />студенты
+            –<br />часть этой традиции!»
+          </p>
 
-        <footer class="footer">
+          <!-- Нижний декоративный фон -->
+          <img class="hero-bg" src="../assets/icons/about-bg.svg" alt="" />
+        </div>
+      </section>
+
+      <!-- === Блок "Наш колледж" с описанием и миссией === -->
+      <section class="our-college-section">
+        <div class="our-college-content--card">
+          <!-- Заголовок раздела -->
+          <h2 class="card-title">Наш колледж</h2>
+
+          <!-- Основное описание колледжа -->
+          <p class="card-description">
+            пилот по подготовке популярных<br />профессий. По словам<br />
+            администрации, в таких учебных<br />заведениях края готовят
+            нужных<br />
+            специалистов – от строителей<br />и логистов до учителей, медиков
+            и<br />
+            IT-шников. И в этом – заслуга<br />нашего коллектива<br />преподавателей
+            и талантливых<br />ребят.
+          </p>
+
+          <!-- Миссия колледжа -->
+          <p class="card-description">
+            <span>НАША МИССИЯ!!! </span> взорвать скуку<br />классического
+            обучения и сделать знания<br />увлекательными.<br />Каждый студент
+            НГГПК – это личность с<br />
+            бунтарским задором, и мы «заряжены»<br />дать ему<br />инструменты в
+            жизнь: будь то отвертка,<br />учебник по программированию или<br />детский<br />аняшек!»
+            (много эмоций, восклицаний)
+          </p>
+
+          <!-- Информация о расположении и инфраструктуре -->
+          <p class="card-description">
+            Расположение: Находка.<br />Рядом – спортзалы<br />парки, море и
+            все<br />удобства большого<br />города. Удобные<br />корпуса,
+            столовые,<br />общежитие – всё<br />чтобы учиться и<br />отдыхать с
+            комфортом!
+          </p>
+        </div>
+      </section>
+
+      <!-- Кнопка-ссылка на страницу поступления -->
+      <a href="../pages/contacts.html" class="section-link">
+        <span>Узнать о поступлении</span>
+      </a>
+    </main>
+
+    <!-- ===== ПОДВАЛ САЙТА (FOOTER) ===== -->
+    <footer class="footer">
       <div class="footer-content">
+        <!-- Логотип колледжа в подвале -->
         <a href="../index.html" class="footer-link-logo">
           <img class="footer-logo" src="../assets/icons/logo.svg" alt="logo" />
         </a>
 
+        <!-- Блок ссылок на социальные сети -->
         <div class="footer-social-list">
           <p class="social-list-title">Социальные сети</p>
           <ul class="social-links">
@@ -88,6 +194,7 @@
           </ul>
         </div>
 
+        <!-- Блок с авторством и лицензией -->
         <div class="license-list">
           <p class="license-list-title">Авторство и лицензия</p>
           <ul class="license-list-items">
@@ -110,6 +217,7 @@
         </div>
       </div>
 
+      <!-- Небольшая приписка внизу подвала -->
       <div class="footer-postscript">
         <p class="footer-postscript--text">
           «Сайт разработан в рамках конкурса «БунтСтуд 2025»
@@ -117,6 +225,7 @@
       </div>
     </footer>
 
+    <!-- Подключение JavaScript для управления меню -->
     <script src="../js/menu.js"></script>
   </body>
 </html>

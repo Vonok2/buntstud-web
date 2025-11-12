@@ -1,24 +1,32 @@
 /* ===== стили страницы "Специальности" ===== */
 
-/* Импорты общих CSS-файлов */
-@import url(./common/fonts.css);
-@import url(./common/reset.css);
-@import url(./common/variables.css);
-@import url(./common/header.css);
-@import url(./common/footer.css);
+/* Импорт общих CSS-файлов, используемых на всех страницах сайта */
+@import url(./common/fonts.css); /* Подключение шрифтов */
+@import url(./common/reset.css); /* Сброс браузерных стилей */
+@import url(./common/variables.css); /* Общие переменные (цвета, шрифты и т.п.) */
+@import url(./common/header.css); /* Стили шапки сайта */
+@import url(./common/footer.css); /* Стили подвала сайта */
 
+/* =============================== */
+/* ===== Глобальные переменные ====*/
+/* =============================== */
 :root {
+  /* Координаты для карточек без горизонтального отражения */
   --noH-h2-top: 5%;
   --noH-h2-left: -5%;
   --noH-li-top: 17%;
   --noH-li-right: 0%;
 
+  /* Координаты для карточек с горизонтальным отражением */
   --flip-h2-top: 21%;
   --flip-h2-left: -3%;
   --flip-li-top: 22%;
   --flip-li-right: 15%;
 }
 
+/* =============================== */
+/* ===== Общий контейнер страницы ==*/
+/* =============================== */
 .container {
   width: 100%;
   max-width: 1920px;
@@ -29,46 +37,47 @@
   gap: 60px;
 }
 
+/* =============================== */
+/* ===== HERO-СЕКЦИЯ (заголовок) ===*/
+/* =============================== */
 .hero {
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: flex-end; /* т.к. ноутбук выйдет из потока */
+  justify-content: flex-end; /* Сдвиг содержимого вправо (ноутбук абсолютный) */
   padding-top: 5rem;
 }
 
-/* Ноутбук — поверх, не влияет на flex */
+/* Изображение ноутбука поверх блока */
 .hero-laptop {
   position: absolute;
   left: 0;
   top: 10%;
-
   width: clamp(92.5px, 25.6944vw, 375px);
   height: auto;
-
-  z-index: 2; /* сверху */
-  pointer-events: none; /* чтобы не мешал кликам */
+  z-index: 2; /* Располагается поверх */
+  pointer-events: none; /* Не мешает кликам */
 }
 
-/* Обёртка для SVG + H1 */
+/* Обертка для SVG и текстового заголовка */
 .hero-title {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   width: 90%;
-  margin-left: auto; /* поджимает блок вправо */
+  margin-left: auto; /* Поджимает вправо */
   position: relative;
   z-index: 1;
 }
 
-/* SVG заголовок */
+/* SVG-заголовок (основная графика) */
 .hero-title--svg {
   width: 95%;
   height: auto;
   margin-bottom: 1.5rem;
 }
 
-/* H1 */
+/* Текстовый заголовок (подпись под SVG) */
 .hero-title--text {
   font-weight: 400;
   font-size: clamp(1.2rem, 3.4722vw, 4rem);
@@ -77,6 +86,9 @@
   text-align: right;
 }
 
+/* =============================== */
+/* ===== СЕКЦИЯ ПРОГРАММ ========= */
+/* =============================== */
 .programs-section {
   margin-top: -80px;
   position: relative;
@@ -86,6 +98,7 @@
   row-gap: 13.4722vw;
 }
 
+/* Декоративное изображение маски сварщика */
 .welding-mask__img {
   position: absolute;
   right: calc(0% - 20px);
@@ -94,6 +107,7 @@
   width: clamp(60px, 16.5972vw, 318px);
 }
 
+/* Контейнер с карточками направлений */
 .programs-cards {
   display: flex;
   flex-direction: column;
@@ -101,6 +115,9 @@
   row-gap: 11.25vw;
 }
 
+/* =============================== */
+/* ===== КАРТОЧКИ СПЕЦИАЛЬНОСТЕЙ ==*/
+/* =============================== */
 .card {
   width: clamp(306px, 85vw, 1632px);
   height: clamp(154px, 43.0555vw, 826px);
@@ -113,12 +130,15 @@
   text-align: left;
 }
 
+/* Обычная карточка */
 .card-no-horizontal-flip {
   background: url("../assets/icons/programs-card.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* Отражённая по горизонтали карточка */
 .card-horizontal-flip {
   background: url("../assets/icons/programs-card-horizontal-flip.svg");
   background-size: cover;
@@ -126,6 +146,7 @@
   background-repeat: no-repeat;
 }
 
+/* Внутреннее содержимое карточки */
 .card-content {
   position: relative;
   z-index: 1;
@@ -134,6 +155,7 @@
   display: flex;
 }
 
+/* Заголовок программы */
 .card-title h2 {
   position: absolute;
   font-size: min(3.125vw, 60px);
@@ -141,17 +163,20 @@
   line-height: 101.1%;
 }
 
+/* Подзаголовок или описание */
 .card-title p {
   position: absolute;
   font-size: min(1.7361vw, 34px);
   line-height: 101.1%;
 }
 
+/* ===== Расположение текста у карточек без отражения ===== */
 .card-no-horizontal-flip .card-title h2 {
   top: var(--noH-h2-top);
   left: var(--noH-h2-left);
 }
 
+/* Индивидуальные корректировки для некоторых карточек */
 .card-no-horizontal-flip:nth-child(3) .card-title h2 {
   top: calc(var(--noH-h2-top) + 4%);
   left: calc(var(--noH-h2-left) + 15%);
@@ -167,11 +192,15 @@
   left: calc(var(--noH-h2-left) + 7%);
 }
 
+/* Подпись под заголовком */
 .card-no-horizontal-flip .card-title p {
   bottom: 30%;
   left: 2%;
 }
 
+/* =============================== */
+/* ===== СПИСОК ДЕТАЛЕЙ В КАРТОЧКЕ ==*/
+/* =============================== */
 .details li {
   position: absolute;
   font-size: min(1.7361vw, 34px);
@@ -179,47 +208,52 @@
   white-space: nowrap;
 }
 
+/* Первая строка списка (несколько элементов в ряд) */
 .details li:first-child {
   display: flex;
   column-gap: min(4.3055vw, 82px);
   transform: rotate(1.39deg);
 }
 
+/* Позиционирование списка для неотражённых карточек */
 .card-no-horizontal-flip .details li:first-child {
   top: var(--noH-li-top);
   right: var(--noH-li-right);
 }
 
+/* Индивидуальная корректировка для 7-й карточки */
 .card-no-horizontal-flip:nth-child(7) .details li:first-child {
   right: calc(var(--noH-li-right) + 17%);
 }
 
+/* Пункты списка ниже первой строки */
 .card-no-horizontal-flip .details li:not(:first-child) {
   bottom: 55%;
   right: -3%;
 }
-
 .card-no-horizontal-flip .details li:nth-child(3) {
   bottom: 45%;
   right: 0;
 }
-
 .card-no-horizontal-flip .details li:nth-child(4) {
   bottom: 35%;
   right: 6%;
 }
-
 .card-no-horizontal-flip .details li:nth-child(5) {
   bottom: 25%;
   right: 12%;
 }
 
+/* =============================== */
+/* ===== КАРТОЧКИ С ОТРАЖЕНИЕМ === */
+/* =============================== */
 .card-horizontal-flip .card-title h2 {
   top: var(--flip-h2-top);
   left: var(--flip-h2-left);
   transform: rotate(-2.83deg);
 }
 
+/* Индивидуальные поправки для разных карточек */
 .card-horizontal-flip:nth-child(4) .card-title h2 {
   top: calc(var(--flip-h2-top) + 5%);
   left: calc(var(--flip-h2-left) + 3%);
@@ -234,11 +268,13 @@
   top: calc(var(--flip-h2-top) + 2%);
 }
 
+/* Подзаголовок для отражённой карточки */
 .card-horizontal-flip .card-title p {
   top: 54%;
   left: 0%;
 }
 
+/* Позиционирование списка в отражённой карточке */
 .card-horizontal-flip .details li:first-child {
   top: var(--flip-li-top);
   right: var(--flip-li-right);
@@ -248,22 +284,22 @@
   bottom: 55%;
   right: 0%;
 }
-
 .card-horizontal-flip .details li:nth-child(3) {
   bottom: 45%;
   right: -3%;
 }
-
 .card-horizontal-flip .details li:nth-child(4) {
   bottom: 35%;
   right: -4%;
 }
-
 .card-horizontal-flip .details li:nth-child(5) {
   bottom: 25%;
   right: -5%;
 }
 
+/* =============================== */
+/* ===== КНОПКА-ССЫЛКА (внизу) ==== */
+/* =============================== */
 .section-link {
   --color: var(--color-primary);
 
@@ -280,7 +316,7 @@
   position: relative;
   overflow: hidden;
 
-  /* наклонные боковые стороны */
+  /* Наклонные боковые стороны */
   transform: skew(-12deg);
   background-color: transparent;
   cursor: pointer;
@@ -289,7 +325,7 @@
     color var(--transition-speed);
 }
 
-/* текст внутри — возвращаем вертикальный вид */
+/* Внутренний текст выравниваем обратно */
 .section-link span {
   transform: skew(12deg);
   color: var(--color-dark);
@@ -297,17 +333,17 @@
   z-index: 2;
 }
 
-/* задний фон с прозрачностью */
+/* Полупрозрачный фон под кнопкой */
 .section-link::before {
   content: "";
   position: absolute;
   inset: 0;
   background-color: var(--color);
-  opacity: 0.1; /* 10% */
+  opacity: 0.1;
   z-index: 1;
 }
 
-/* hover — заливка */
+/* Эффект заливки при наведении */
 .section-link:hover::before {
   opacity: 1;
 }
@@ -316,6 +352,11 @@
   color: var(--color-light);
 }
 
+/* =============================== */
+/* ===== АДАПТИВНЫЕ НАСТРОЙКИ ==== */
+/* =============================== */
+
+/* Для экранов ≤1140px */
 @media screen and (max-width: 1140px) {
   :root {
     --noH-h2-top: 3%;
@@ -324,6 +365,7 @@
   }
 }
 
+/* Для экранов ≤774px */
 @media screen and (max-width: 774px) {
   :root {
     --noH-h2-left: -7%;
@@ -337,9 +379,10 @@
   }
 }
 
+/* Для экранов ≤575px */
 @media screen and (max-width: 575px) {
   .hero-laptop {
-    top: 30%;
+    top: 30%; /* Сдвигаем ноутбук ниже */
   }
 
   :root {
@@ -352,6 +395,7 @@
   }
 }
 
+/* Для экранов ≤480px */
 @media screen and (max-width: 480px) {
   :root {
     --noH-h2-top: -6%;
@@ -364,15 +408,16 @@
   }
 }
 
+/* Для экранов ≤380px */
 @media screen and (max-width: 380px) {
   :root {
     --noH-h2-top: -9%;
     --noH-li-top: 3%;
-
     --flip-h2-top: 10%;
   }
 }
 
+/* Для экранов ≤360px */
 @media screen and (max-width: 360px) {
   :root {
     --noH-h2-left: -10%;

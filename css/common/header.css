@@ -55,7 +55,6 @@
   align-items: center; /* вертикальное центрирование */
   justify-content: center; /* горизонтальное центрирование */
   text-align: center; /* на случай переноса строки */
-
 }
 
 /* Активная ссылка */
@@ -83,6 +82,10 @@
 /* Hover эффект */
 .nav__list a:hover {
   color: var(--color-accent);
+}
+
+.nav__list a:hover::after {
+  background: var(--color-secondary);
 }
 
 /* ===== БУРГЕР ===== */

@@ -48,20 +48,28 @@
 
     <main class="container">
       <section class="hero">
+        <!-- Изображение ноутбука в секции Hero -->
         <img class="hero-laptop" src="../assets/icons/laptop.svg" alt="" />
+
+        <!-- Блок с заголовком Hero -->
         <div class="hero-title">
+          <!-- SVG-изображение для визуального акцента -->
           <img
             class="hero-title--svg"
             src="../assets/icons/hero-programs.svg"
             alt=""
           />
+          <!-- Основной заголовок секции Hero -->
           <h1 class="hero-title--text">
             В НГГПК собраны все профессии – от А до Я: от автомехаников до
             зумеров- программистов
           </h1>
         </div>
       </section>
+
+      <!-- ===== Programs Section ===== -->
       <section class="programs-section">
+        <!-- Адаптивное изображение сварочной маски -->
         <picture class="welding-mask">
           <source
             media="(max-width: 1920px)"
@@ -73,9 +81,13 @@
             class="welding-mask__img"
           />
         </picture>
+
+        <!-- Контейнер с карточками всех программ -->
         <div class="programs-cards">
+          <!-- ===== Карточка программы ===== -->
           <div class="card card-no-horizontal-flip">
             <div class="card-content">
+              <!-- Заголовок и слоган программы -->
               <div class="card-title">
                 <h2>Информационные системы<br />и<br />программирование</h2>
                 <p class="tagline">
@@ -84,6 +96,7 @@
                   как мемы – быстро и<br />смешно!
                 </p>
               </div>
+              <!-- Детали программы -->
               <ul class="details">
                 <li>
                   <p>Очная ФО</p>
@@ -96,6 +109,34 @@
               </ul>
             </div>
           </div>
+
+          <!-- ===== Карточка программы с переворотом ===== -->
+          <div class="card card-horizontal-flip">
+            <div class="card-content">
+              <div class="card-title">
+                <h2>Монтаж электро<br />оборудования</h2>
+                <p class="tagline">
+                  учись обслуживать<br />электроустановки и<br />свет, будь<br />техником-магом
+                  энергии. Элементы и<br />молнии в комплекте!
+                </p>
+              </div>
+              <ul class="details">
+                <li>
+                  <p>Очная ФО</p>
+                  <p>Заочное ФО</p>
+                </li>
+                <li>Кол-во бюджетных мест: <strong>20 мест</strong></li>
+                <li>Срок обучения: <strong>3 года 9 месяцев</strong></li>
+                <li>Место реализации: <strong>г. Находка</strong></li>
+                <li>Стоимость в год: <strong>100 000 р</strong></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== Остальные карточки программ (структура повторяется) ===== -->
+          <!-- card-no-horizontal-flip / card-horizontal-flip определяет направление анимации переворота карточки -->
+          <!-- Каждая карточка содержит: заголовок (h2), слоган (p.tagline) и детали программы (ul.details) -->
+
           <div class="card card-horizontal-flip">
             <div class="card-content">
               <div class="card-title">
@@ -267,6 +308,7 @@
             </div>
           </div>
         </div>
+        <!-- Ссылка на страницу контактов/поступления -->
         <a href="../pages/contacts.html" class="section-link">
           <span>Узнать о поступлении</span>
         </a>

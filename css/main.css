@@ -63,6 +63,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: -30px;
   padding: 16px 48px;
   font-size: 18px;
   font-weight: 600;

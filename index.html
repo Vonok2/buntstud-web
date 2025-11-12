@@ -47,7 +47,9 @@
     </header>
 
     <main class="container">
+      <!-- ===== Hero Section ===== -->
       <div class="hero">
+        <!-- Блок с заголовком и SVG-изображением -->
         <div class="hero-title">
           <h1 class="hero-title--txt">НГГПК</h1>
           <img
@@ -56,24 +58,35 @@
             class="hero-title--svg"
           />
         </div>
+        <!-- Ссылка на страницу "О нас" -->
         <a href="./pages/about.html" class="section-link">
           <span>Узнать больше о нас</span>
         </a>
       </div>
 
+      <!-- ===== Why Us Section ===== -->
       <section class="why-us">
         <div class="why-us-inner">
-          <img class="bg-sea-wave" src="./assets/icons/bg-sea-wave.svg" alt="" />
+          <!-- Фоновая волна -->
+          <img
+            class="bg-sea-wave"
+            src="./assets/icons/bg-sea-wave.svg"
+            alt=""
+          />
+          <!-- Заголовок секции -->
           <h2 class="why-us--title">Почему мы?</h2>
+          <!-- Иконка шляпы -->
           <img class="hat" src="./assets/icons/hat.svg" alt="" />
+          <!-- Текстовые блоки с преимуществами -->
           <p class="why-us--text">
             У нас 23 программы обучения,<br />сотни бюджетных мест и тысячи<br />
             задорных выпускников
           </p>
+          <!-- Рыбы для декоративных эффектов -->
           <img class="fish fish-1" src="./assets/icons/fish-1.svg" alt="" />
           <p class="why-us--text">
-            современное оборудование, 20<br />специализированных лабораторий и<br />практика
-            на реальных предприятиях.
+            современное оборудование, 20<br />специализированных лабораторий
+            и<br />практика на реальных предприятиях.
           </p>
           <img class="fish fish-2" src="./assets/icons/fish-2.svg" alt="" />
           <p class="why-us--text">
@@ -86,24 +99,29 @@
             регионе по<br />
             количеству <br />подготовки
           </p>
+          <!-- Фон морского дна и воды -->
           <img class="seabed" src="./assets/icons/seabed.svg" alt="" />
           <img class="bg-water" src="./assets/icons/water.svg" alt="" />
         </div>
       </section>
 
+      <!-- ===== Slider Section ===== -->
       <section class="slider-section">
-        <!-- Кнопка сверху слайдера -->
+        <!-- Ссылка на страницу с программами -->
         <a href="./pages/programs.html" class="section-link">
           <span>Перейти к специальностям</span>
         </a>
 
-        <!-- Слайдер -->
+        <!-- Слайдер с навигационными стрелками -->
         <section class="slider">
+          <!-- Кнопка "назад" -->
           <button class="slider-arrow slider-arrow-left">
             <img src="./assets/icons/slider-arrow-left.svg" alt="Previous" />
           </button>
 
+          <!-- Обёртка слайдов -->
           <div class="slider-wrapper">
+            <!-- Слайды (класс active обозначает текущий слайд) -->
             <img
               class="slide active"
               src="./assets/img/slides/slide-1.png"
@@ -121,18 +139,22 @@
             />
           </div>
 
+          <!-- Кнопка "вперёд" -->
           <button class="slider-arrow slider-arrow-right">
             <img src="./assets/icons/slider-arrow-right.svg" alt="Next" />
           </button>
         </section>
       </section>
 
+      <!-- ===== News Section ===== -->
       <section class="news">
+        <!-- Фоновая линия -->
         <img
           class="bg-curved-line"
           src="./assets/icons/curved-line.svg"
           alt=""
         />
+        <!-- Заголовок новостей с SVG и иконкой книги -->
         <div class="news-title">
           <img
             class="news-title--svg"
@@ -141,9 +163,13 @@
           />
           <img class="news-title--book" src="./assets/icons/book.svg" alt="" />
         </div>
+
+        <!-- Контейнер карточек новостей -->
         <div class="news-cards">
+          <!-- ===== Одна карточка новости ===== -->
           <div class="cards-item">
             <div class="cards-inner">
+              <!-- Изображение новости -->
               <div class="card-img-wrapper">
                 <img
                   class="cards-item--img"
@@ -151,6 +177,7 @@
                   alt=""
                 />
               </div>
+              <!-- Текстовая часть карточки -->
               <div class="cards-item--text--area">
                 <div class="cards-item--text">
                   <h3 class="card-title">Волонтёрские акции</h3>
@@ -161,6 +188,8 @@
               </div>
             </div>
           </div>
+
+          <!-- ===== Повторение для остальных карточек ===== -->
           <div class="cards-item">
             <div class="cards-inner">
               <div class="card-img-wrapper">
@@ -180,6 +209,7 @@
               </div>
             </div>
           </div>
+
           <div class="cards-item">
             <div class="cards-inner">
               <div class="card-img-wrapper">
@@ -200,6 +230,8 @@
             </div>
           </div>
         </div>
+
+        <!-- Контроллер навигации новостей -->
         <div class="news-control">
           <img
             class="news-control--btn"
