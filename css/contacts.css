@@ -6,3 +6,231 @@
 @import url(./common/variables.css);
 @import url(./common/header.css);
 @import url(./common/footer.css);
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.hero-title--svg {
+  width: 100vw;
+  height: 70vw;
+  overflow: hidden;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+  margin: 0 auto;
+}
+
+.contacts-section {
+  position: relative;
+}
+
+.contact-booth--svg {
+  max-width: 1920px;
+  max-height: 2304px;
+  width: 100vw;
+  height: 120vw;
+  overflow: hidden;
+  display: block;
+  object-fit: cover;
+  object-position: bottom;
+  margin: 0 auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.contact-social-links {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  column-gap: 10.4166vw;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  column-gap: 2.7777vw;
+  font-size: 3.125vw;
+  color: var(--color-light);
+}
+
+.contact-link:hover {
+  /* color: var(--color-secondary); */
+  transform: translateX(0.5vw);
+}
+
+.contact-link img {
+  max-width: 100px;
+  width: 6.9444vw;
+}
+
+.admission-section {
+  margin-top: -100px;
+}
+
+.admission-title-primary {
+  font-size: min(13.8888vw, 266px);
+  color: var(--color-primary);
+  white-space: nowrap;
+  padding-bottom: -40px;
+  position: relative;
+}
+
+.admission-title-primary span {
+  font-family: var(--font-accent);
+  color: var(--color-accent);
+  position: absolute;
+  font-weight: 400;
+  top: 36%;
+  left: 1.5%;
+}
+
+.admission-cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5.9027vw;
+  margin-top: 14.2361vw;
+  position: relative;
+}
+
+.card {
+  width: min(85.4166vw, 1640px);
+  height: min(43.0555vw, 826px);
+  background: url("../assets/icons/contact-card.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  position: relative;
+  color: var(--color-light);
+}
+
+.card-with-btn {
+  width: min(83.6111vw, 1605px);
+  height: min(46.1111vw, 885px);
+  background: url("../assets/icons/contact-card-with-btn.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  position: relative;
+  color: var(--color-light);
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+.card-title-step1 {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  font-size: min(10.4166vw, 200px);
+  white-space: nowrap;
+}
+
+.card-title-step2 {
+  position: absolute;
+  top: 4.5%;
+  right: 2%;
+  font-size: min(8.6805vw, 166px);
+  white-space: nowrap;
+}
+
+.card-title-step3 {
+  position: absolute;
+  top: 4%;
+  left: 8%;
+  font-size: min(10.4166vw, 200px);
+  white-space: nowrap;
+  transform: rotate(-1.35deg);
+}
+
+.card-text {
+  position: absolute;
+  line-height: 101.1%;
+  font-size: min(2.4305vw, 46px);
+  white-space: nowrap;
+}
+
+.card-with-btn-text {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  font-size: min(3.4722vw, 66px);
+  line-height: 101.1%;
+  white-space: nowrap;
+}
+
+.card-text:nth-child(3) {
+  top: 40%;
+  left: 8%;
+}
+
+.card-text:nth-child(4) {
+  top: 40%;
+  right: 12%;
+}
+
+.card-btn {
+  display: inline-block;
+  position: relative;
+  background-color: var(--color-secondary);
+  width: min(51.9444vw, 998px);
+  height: min(20.6944vw, 397px);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.card-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.card-btn:hover {
+  transform: translateY(-2%) scale(1.02);
+}
+
+.card-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.card-btn span {
+  position: absolute;
+  top: 40%;
+  right: 0.5%;
+  transform: rotate(-21.08deg);
+  color: var(--color-accent);
+  font-size: min(4.5138vw, 86px);
+  font-weight: 700;
+  line-height: 101.1%;
+  text-align: right;
+}
+
+.curved-contact-line {
+  width: 100vw;
+  position: absolute;
+  top: -30%;
+  z-index: -1;
+}
+
+@media screen and (min-width: 1920px) {
+}

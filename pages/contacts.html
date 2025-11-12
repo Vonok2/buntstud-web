@@ -1,11 +1,10 @@
 <!-- ===== Страница "Контакты" ===== -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Надо придумать название вкладки -->
-    <title>Поступающим</title>
+    <title>Контакты и Поступающим</title>
     <link rel="stylesheet" href="../css/contacts.css" />
   </head>
   <body>
@@ -25,7 +24,11 @@
         <!-- ПРАВАЯ НАВИГАЦИЯ -->
         <ul class="nav__list nav__list--right">
           <li><a href="./programs.html">Специальности</a></li>
-          <li><a class="current" href="./contacts.html">Контакты и<br>поступающим</a></li>
+          <li>
+            <a class="current" href="./contacts.html"
+              >Контакты и<br />поступающим</a
+            >
+          </li>
         </ul>
 
         <!-- БУРГЕР-КНОПКА -->
@@ -45,10 +48,63 @@
       </div>
     </header>
 
+    <main class=".container">
+      <section class="hero">
+        <img
+          class="hero-title--svg"
+          src="../assets/icons/contact-title.svg"
+          alt=""
+        />
+      </section>
+      <section class="contacts-section">
+        <img
+          class="contact-booth--svg"
+          src="../assets/icons/contact-booth.svg"
+          alt=""
+        />
+        <div class="contact-social-links">
+          <a href="https://t.me/M0l0chnik" class="contact-link">
+            <img src="../assets/icons/tg-icon.svg" alt="" />Telegram</a
+          >
+          <a href="https://vk.com/nggpccollegepb" class="contact-link">
+            <img src="../assets/icons/vk-icon.svg" alt="" />Vk</a
+          >
+          <a href="https://vl-web.vercel.app/" class="contact-link">
+            <img src="../assets/icons/inst-icon.svg" alt="" />instagram</a
+          >
+        </div>
+      </section>
+      <section class="admission-section">
+        <h2 class="admission-title-primary">
+          Что надо для<br /><span>поступления</span>
+        </h2>
+        <div class="admission-cards">
+          <div class="card">
+            <h3 class="card-title-step1">Шаг 1</h3>
+            <h3 class="card-title-step2">Шаг 2</h3>
+            <p class="card-text">
+              Подай заявку онлайн<br />(через ГосУслуги) или<br />приходи в
+              приемную<br />комиссию (забронируй<br />экскурсию по<br />колледжу!).
+            </p>
+            <p class="card-text">
+              Сдай копии<br />аттестата,<br />медсправку и<br />фото в отдел<br />набора
+              – мы<br />
+              помогаем с<br />оформлением
+            </p>
+          </div>
+          <div class="card-with-btn">
+            <h3 class="card-title-step3">Шаг 3</h3>
+            <p class="card-with-btn-text">
+              Ожидай<br />зачисления – а<br />потом до встречи<br />в НГГПК!
+            </p>
+            <a class="card-btn" href=""><span>Подать заявку<br />онлайн</span></a>
+          </div>
+          <img class="curved-contact-line" src="../assets/icons/curved-contact-line.svg" alt="" />
+        </div>
+      </section>
+    </main>
 
-
-
-        <footer class="footer">
+    <footer class="footer">
       <div class="footer-content">
         <a href="../index.html" class="footer-link-logo">
           <img class="footer-logo" src="../assets/icons/logo.svg" alt="logo" />

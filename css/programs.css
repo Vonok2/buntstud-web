@@ -292,6 +292,7 @@
 /* текст внутри — возвращаем вертикальный вид */
 .section-link span {
   transform: skew(12deg);
+  color: var(--color-dark);
   position: relative;
   z-index: 2;
 }
@@ -311,7 +312,7 @@
   opacity: 1;
 }
 
-.section-link:hover {
+.section-link:hover span {
   color: var(--color-light);
 }
 
@@ -337,6 +338,10 @@
 }
 
 @media screen and (max-width: 575px) {
+  .hero-laptop {
+    top: 30%;
+  }
+
   :root {
     --noH-h2-top: -3%;
     --noH-li-top: 9%;
@@ -344,11 +349,6 @@
     --flip-h2-top: 16%;
     --flip-h2-left: -6%;
     --flip-li-top: 16%;
-  }
-
-  /* отдельный случай */
-  .hero-laptop {
-    top: 30%;
   }
 }
 
@@ -362,10 +362,6 @@
     --flip-li-right: 7%;
     --flip-li-top: 14%;
   }
-
-  /* .hero-laptop {
-    top: 40%;
-  } */
 }
 
 @media screen and (max-width: 380px) {

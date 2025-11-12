@@ -26,6 +26,7 @@
   justify-content: center;
   gap: 40px;
   padding: 60px 0;
+  margin-bottom: 160vw;
   position: relative;
 }
 
@@ -82,49 +83,82 @@
 }
 
 /* текст внутри — возвращаем вертикальный вид */
+.section-link {
+  --color: var(--color-primary);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 48px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color);
+  border: 3px solid var(--color);
+  transform: skew(-12deg);
+  background-color: transparent;
+  cursor: pointer;
+  transition: color var(--transition-speed);
+}
+
+/* текст внутри */
 .section-link span {
   transform: skew(12deg);
   position: relative;
   z-index: 2;
 }
 
-/* задний фон с прозрачностью */
+/* создаем заливку */
 .section-link::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0; /* начинаем справа */
+  width: 0; /* начальная ширина */
+  height: 100%;
   background-color: var(--color);
-  opacity: 0.1; /* 10% */
   z-index: 1;
+  transition: width 0.5s ease; /* плавное заполнение */
 }
 
-/* hover — заливка */
+/* при наведении — заполняем всю кнопку */
 .section-link:hover::before {
-  opacity: 1;
+  width: 100%;
+  left: 0;
+  right: auto;
 }
 
+/* цвет текста при hover */
 .section-link:hover {
   color: var(--color-light);
 }
 
 .why-us {
-  position: relative;
+  position: absolute;
+  top: 65vw;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100vw;
-  height: 140vw;
-  margin: 0 calc(-40px); /* компенсируем padding main */
-  overflow: hidden;
-  padding: 100px 0 150px; /* верхний и нижний отступ для свободного пространства */
+  height: 132vw;
+  /* background-color: var(--color-accent); */
+}
+
+.why-us-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 /* Фоновая вода */
 .bg-water {
   position: absolute;
-  top: 7%;
-  left: 0;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100vw;
-  height: 100%;
   z-index: 3;
-  object-fit: cover;
   pointer-events: none;
 }
 
@@ -134,28 +168,27 @@
   top: 3%;
   left: 0;
   width: 100vw;
-  height: ;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
 }
 
 /* Морское дно */
 .seabed {
   position: absolute;
-  bottom: -1%;
+  bottom: -10%;
   left: 0;
   width: 100vw;
-  z-index: 5;
+  z-index: 4;
   pointer-events: none;
 }
 
 /* Шапка */
 .hat {
   position: absolute;
-  width: 21.875vw;
+  width: min(21.875vw, 420px);
   top: 0%; /* чуть ниже заголовка */
   right: 0%;
-  z-index: 3;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -172,64 +205,61 @@
 
 /* Параграфы */
 .why-us--text {
-  position: relative;
-  z-index: 3;
-  max-width: 30%; /* не более 30% от main */
-  font-size: 2.08vw; /* адаптивный размер */
-  line-height: 1.6;
-  margin: 60px 0; /* вертикальные отступы */
+  position: absolute;
+  z-index: 4;
+  font-size: min(2.7777vw, 54px); /* адаптивный размер */
+  white-space: nowrap;
+  opacity: 0.5;
 }
 
 /* Наклоны и стороны */
 .why-us--text:nth-of-type(1) {
-  float: left;
-  margin-left: 4vw;
-  transform: rotate(3deg);
-  clear: both;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-110%) rotate(10.39deg);
 }
 
 .why-us--text:nth-of-type(2) {
-  float: right;
-  margin-right: 2.08vw;
-  transform: rotate(-3deg);
-  clear: both;
+  top: 42%;
+  right: 50%;
+  transform: translateX(95%) rotate(-4.03deg);
 }
 
 .why-us--text:nth-of-type(3) {
-  float: left;
-  margin-left: 2.08vw;
-  transform: rotate(-3deg);
-  clear: both;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-115%) rotate(-4.95deg);
 }
 
 .why-us--text:nth-of-type(4) {
-  float: right;
-  margin-right: 2.08vw;
-  transform: rotate(3deg);
-  clear: both;
+  top: 78%;
+  right: 50%;
+  transform: translateX(110%) rotate(7.28deg);
 }
 
 /* Рыбки */
 .fish {
   position: absolute;
-  width: 11.6666;
-  z-index: 4;
+  width: min(15.5555vw, 298px);
+  z-index: 5;
   pointer-events: none;
 }
 
 /* Рыбки внутри main */
 .fish-1 {
-  top: 26%; /* относительно контейнера main */
-  left: 10%;
+  top: 35%; /* относительно контейнера main */
+  left: 20%;
+  opacity: 0.3;
 }
 
 .fish-2 {
-  top: 45%;
+  top: 60%;
   right: 10%;
+  opacity: 0.3;
 }
 
 .fish-3 {
-  top: 70%;
+  top: 75%;
   left: 10%;
 }
 
@@ -298,7 +328,7 @@
 
 /* ========= СЕКЦИЯ НОВОСТЕЙ ========= */
 .news {
-  margin-top: 200px;
+  margin-top: 0px;
   position: relative;
 }
 
@@ -342,10 +372,8 @@
   transition: transform 0.35s ease-in-out;
   --skew-angle: -8deg;
   --color: var(--color-primary);
-
   width: 900px;
   height: 320px;
-
   border: 5px solid var(--color);
   transform: skew(var(--skew-angle));
   overflow: hidden;
@@ -475,26 +503,17 @@
   height: auto;
 }
 
-@media (min-width: 1921px) {
-  .why-us {
-    margin-left: calc((100vw - 100%) / -2);
-    margin-right: calc((100vw - 50%) / -2);
-  }
-}
-
-@media (min-width: 1412px) {
+@media screen and (min-width: 1412px) {
   .bg-curved-line {
     height: 80%;
   }
 }
 
-@media screen and (max-width: 1412px) {
-  .why-us {
-    height: 200vw;
-  }
-}
-
 @media screen and (max-width: 1012px) {
+  .why-us {
+    top: 80vw;
+  }
+
   /* уменьшаем высоту карточки */
   .cards-item {
     width: 90vw; /* чтобы не выходило за экран */
@@ -538,59 +557,6 @@
 }
 
 @media screen and (max-width: 900px) {
-  .why-us {
-    height: 200vw;
-  }
-
-  /* Заголовок */
-  .why-us--title {
-    font-size: 10vw; /* адаптивно под маленький экран */
-    transform: rotate(0deg); /* без наклона */
-    text-align: center;
-    padding-left: 0;
-  }
-
-  .why-us--text {
-    font-size: 1rem;
-    float: none; /* убираем плавающие слева/справа */
-    max-width: 90%; /* почти вся ширина экрана */
-    margin: 40px auto; /* вертикальные отступы + центрирование */
-    text-align: center;
-    transform: rotate(0deg); /* убираем наклон или можно маленький */
-  }
-
-  /* Расположение рыбок между абзацами */
-  .fish {
-    position: relative; /* теперь относительно потока */
-    display: block;
-    margin: 0px auto; /* отступ сверху и снизу, центрируем */
-  }
-
-  /* Дополнительно можно уменьшить размер рыбок */
-  .fish img {
-    max-width: 80px; /* пример, подстраивать по дизайну */
-    height: auto;
-  }
-
-  .fish {
-    width: 9vw;
-  }
-
-  .fish-1 {
-    top: 4%;
-    left: 10%;
-  }
-
-  .fish-2 {
-    top: 14%;
-    right: 10%;
-  }
-
-  .fish-3 {
-    top: 17%;
-    left: 10%;
-  }
-
   /* Секция с слайдером*/
   .slider-section {
     padding: 30px 10px;
@@ -645,8 +611,14 @@
   }
 }
 
-@media screen and (max-width: 712px) {
+@media screen and (max-width: 700px) {
   .why-us {
-    height: 250vw;
+    top: 100vw;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .why-us {
+    top: 120vw;
   }
 }

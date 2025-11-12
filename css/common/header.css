@@ -47,18 +47,18 @@
 .nav__list a {
   font-size: 1.5625rem;
   text-decoration: none;
-  color: var(--color-dark);
   font-weight: 400;
   white-space: nowrap;
   padding: 4px 6px;
   transition: 0.25s ease;
   display: flex;
-  align-items: center;      /* вертикальное центрирование */
-  justify-content: center;  /* горизонтальное центрирование */
-  text-align: center;       /* на случай переноса строки */
+  align-items: center; /* вертикальное центрирование */
+  justify-content: center; /* горизонтальное центрирование */
+  text-align: center; /* на случай переноса строки */
+
 }
 
-/* Активная ссылка (ГЛАВНАЯ) */
+/* Активная ссылка */
 .nav__list a.active {
   position: relative;
 }
